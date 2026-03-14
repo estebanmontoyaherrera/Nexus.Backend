@@ -13,5 +13,7 @@
     <Project Path="src/Modules/Identity/Identity.Infrastructure/Identity.Infrastructure.csproj" />
   </Folder>
   <Folder Name="/test/" />
-  <Folder Name="/test/Identity/" />
+  <Folder Name="/test/Identity/">
+    <Project Path="test/Identity/Nexus.Identity.SecurityTests/Nexus.Identity.SecurityTests.csproj" />
+  </Folder>
 </Solution>
