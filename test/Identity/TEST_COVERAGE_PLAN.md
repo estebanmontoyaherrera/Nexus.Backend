@@ -30,4 +30,4 @@
 `MethodName_StateUnderTest_ExpectedBehavior`
 
 ## Target
-- 70%+ on Identity module focus areas with incremental expansion path.
+- 85%+ on Identity module focus areas with incremental expansion path.
