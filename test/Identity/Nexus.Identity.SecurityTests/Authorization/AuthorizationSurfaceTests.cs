@@ -1,6 +1,7 @@
 using FluentAssertions;
 using Identity.Api.Controllers;
 using Microsoft.AspNetCore.Authorization;
+using Xunit;
 
 namespace Nexus.Identity.SecurityTests.Authorization;
 

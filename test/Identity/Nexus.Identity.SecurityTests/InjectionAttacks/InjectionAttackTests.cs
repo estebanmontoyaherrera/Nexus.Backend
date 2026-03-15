@@ -2,6 +2,7 @@ using FluentAssertions;
 using Identity.Application.UseCases.Users.Commands.CreateCommand;
 using Identity.Application.UseCases.Users.Queries.LoginQuery;
 using Nexus.Identity.SecurityTests.Utilities;
+using Xunit;
 
 namespace Nexus.Identity.SecurityTests.InjectionAttacks;
 

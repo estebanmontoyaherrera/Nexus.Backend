@@ -1,6 +1,8 @@
-using System.IdentityModel.Tokens.Jwt;
 using FluentAssertions;
+using Identity.Api.Controllers;
 using Nexus.Identity.SecurityTests.Utilities;
+using System.IdentityModel.Tokens.Jwt;
+using Xunit;
 
 namespace Nexus.Identity.SecurityTests.ReplayAttacks;
 
@@ -26,7 +28,7 @@ public class ReplayAttackTests
     [Fact]
     public void ReplayAttack_RevokeRefreshTokenEndpoint_ShouldBeUnauthenticatedSurface_DetectedWeakness()
     {
-        var method = typeof(Identity.Api.Controllers.AuthController).GetMethod("RevokeRefreshToken");
+        var method = typeof(AuthController).GetMethod("RevokeRefreshToken");
         var hasAuthorize = method!.GetCustomAttributes(typeof(Microsoft.AspNetCore.Authorization.AuthorizeAttribute), true).Any();
 
         hasAuthorize.Should().BeFalse();

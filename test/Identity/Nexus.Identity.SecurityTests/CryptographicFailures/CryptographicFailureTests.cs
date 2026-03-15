@@ -3,6 +3,7 @@ using FluentAssertions;
 using Identity.Domain.Entities;
 using Identity.Infrastructure.Authentication;
 using Microsoft.Extensions.Options;
+using Xunit;
 
 namespace Nexus.Identity.SecurityTests.CryptographicFailures;
 

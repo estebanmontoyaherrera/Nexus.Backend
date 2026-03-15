@@ -6,17 +6,20 @@ public static class TestPathHelper
 {
     public static string RepoRoot([CallerFilePath] string callerPath = "")
     {
-        var dir = new DirectoryInfo(Path.GetDirectoryName(callerPath)!);
-        while (dir is not null && dir.Name != "Nexus.Backend")
+        var dir = Path.GetDirectoryName(callerPath)!;
+
+        while (dir != null)
         {
-            dir = dir.Parent;
+            if (Directory.Exists(Path.Combine(dir, "src")) &&
+                Directory.Exists(Path.Combine(dir, "test")))
+            {
+                return dir;
+            }
+
+            dir = Directory.GetParent(dir)?.FullName;
         }
 
-        if (dir is null)
-        {
-            throw new DirectoryNotFoundException("Unable to locate Nexus.Backend repository root from test context.");
-        }
-
-        return dir.FullName;
+        throw new DirectoryNotFoundException(
+            "Unable to locate Nexus.Backend repository root from test context.");
     }
 }

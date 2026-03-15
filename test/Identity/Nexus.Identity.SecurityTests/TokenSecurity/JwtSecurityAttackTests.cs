@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using FluentAssertions;
 using Microsoft.IdentityModel.Tokens;
 using Nexus.Identity.SecurityTests.Utilities;
+using Xunit;
 
 namespace Nexus.Identity.SecurityTests.TokenSecurity;
 
